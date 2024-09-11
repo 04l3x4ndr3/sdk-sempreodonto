@@ -9,6 +9,7 @@ use O4l3x4ndr3\SdkSempreOdonto\Types\Bairro;
 use O4l3x4ndr3\SdkSempreOdonto\Types\Cidade;
 use O4l3x4ndr3\SdkSempreOdonto\Types\Especialidade;
 use O4l3x4ndr3\SdkSempreOdonto\Types\Plano;
+use O4l3x4ndr3\SdkSempreOdonto\Types\Prestador;
 use O4l3x4ndr3\SdkSempreOdonto\Types\Servico;
 use O4l3x4ndr3\SdkSempreOdonto\Types\Uf;
 
@@ -137,8 +138,30 @@ class RedeCredenciada extends CallApi
         ]);
         $params = http_build_query($params);
         $result = $this->call('GET', "/api/RedeCredenciada/Resultado/$params");
-        foreach ($result as $key => $plano) {
-            $result[$key] = (new Plano($plano->codigoAns, $plano->id, $plano->descricao));
+        foreach ($result as $key => $value) {
+            $prestador = (new Prestador())
+                ->setCodDentista($value->cod_dentista)
+                ->setTipoPessoa($value->tipo_pessoa)
+                ->setNomeFantasia($value->nome_fantasia)
+                ->setRazaoSocial($value->razao_social)
+                ->setNumCpfCnpj($value->num_cpf_cnpj)
+                ->setCodEspec($value->cod_espec)
+                ->setLogradouro($value->logradouro)
+                ->setBairro($value->bairro)
+                ->setCidade($value->cidade)
+                ->setUf($value->uf)
+                ->setCep($value->cep)
+                ->setDdd($value->ddd)
+                ->setFone1($value->fone1)
+                ->setFone2($value->fone2)
+                ->setWhatsapp($value->whatsapp)
+                ->setLatitude($value->latitude)
+                ->setLongitude($value->longitude)
+                ->setUfId($value->ufId)
+                ->setCidadeId($value->cidadeId)
+                ->setBairroId($value->bairroId)
+                ->setEspecialidadeId($value->especialidadeId);
+            $result[$key] = $prestador;
         }
         return $result;
     }
