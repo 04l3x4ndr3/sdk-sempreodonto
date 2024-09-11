@@ -10,7 +10,7 @@ class CallApi
 {
     private Configuration $config;
     private ?array $header;
-    private ?array $credential;
+    private ?string $credential;
 
     /**
      * @param Configuration|null $config
@@ -46,19 +46,19 @@ class CallApi
     }
 
     /**
-     * @return array|null
+     * @return string|null
      */
-    public function getCredential(): ?array
+    public function getCredential(): ?string
     {
         return $this->credential;
     }
 
     /**
-     * @param array|null $credential
+     * @param string|null $credential
      *
      * @return CallApi
      */
-    public function setCredential(?array $credential): CallApi
+    public function setCredential(?string $credential): CallApi
     {
         $this->credential = $credential;
         return $this;

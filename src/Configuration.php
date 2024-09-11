@@ -15,7 +15,7 @@ class  Configuration
     public const URL_PRODUCTION = "https://api.sempreodonto.com.br";
 
     private ?string $environment;
-    private ?array $credentials;
+    private ?string $credentials;
     private ?array $httpHeader;
 
     public function __construct(?string $apiKey = NULL)
