@@ -26,9 +26,9 @@ class  Configuration
     }
 
     /**
-     * @return array
+     * @return string
      */
-    public function getCredential(): array
+    public function getCredential(): string
     {
         return $this->credentials;
     }
