@@ -1,0 +1,15 @@
+### Composer template
+composer.phar
+/vendor/
+/examples/
+
+### JetBrains template
+.idea/*
+
+### macOS template
+# General
+.DS_Store
+
+# Thumbnails
+._*
+

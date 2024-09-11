@@ -1,0 +1,22 @@
+{
+  "name": "o4l3x4ndr3/sdk-senpreodonto",
+  "description": "SDK de consumo de API da SempreOdonto",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "O4l3x4ndr3\\SdkSempreOdonto\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Alexandre G R Alves",
+      "email": "alexandre@2plug.com.br"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "guzzlehttp/guzzle": "^7.5.0"
+  }
+}
