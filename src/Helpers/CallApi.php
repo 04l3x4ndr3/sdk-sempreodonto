@@ -76,10 +76,10 @@ class CallApi
      * @param string $method
      * @param string $endpoint
      * @param array|null $body
-     * @return object
+     * @return object|array
      * @throws GuzzleException
      */
-    public function call(string $method, string $endpoint, ?array $body = NULL): object
+    public function call(string $method, string $endpoint, ?array $body = NULL): object|array
     {
         $client = new Client();
         $options = array_filter([
