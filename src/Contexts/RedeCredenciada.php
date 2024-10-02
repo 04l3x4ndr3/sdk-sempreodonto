@@ -137,7 +137,7 @@ class RedeCredenciada extends CallApi
             'planoId' => $planoId,
         ]);
         $params = http_build_query($params);
-        $result = $this->call('GET', "/api/RedeCredenciada/Resultado/$params");
+        $result = $this->call('GET', "/api/RedeCredenciada/Resultado?$params");
         foreach ($result as $key => $value) {
             $prestador = (new Prestador())
                 ->setCodDentista($value->cod_dentista)
