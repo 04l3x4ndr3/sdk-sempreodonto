@@ -19,8 +19,8 @@ class Prestador
     private ?string $fone1;
     private ?string $fone2;
     private ?string $whatsapp;
-    private ?int $latitude;
-    private ?int $longitude;
+    private ?float $latitude;
+    private ?float $longitude;
     private ?int $ufId;
     private ?int $cidadeId;
     private ?int $bairroId;
@@ -95,23 +95,23 @@ class Prestador
         return $this;
     }
 
-    public function getLongitude(): ?int
+    public function getLongitude(): ?float
     {
         return $this->longitude;
     }
 
-    public function setLongitude(?int $longitude): Prestador
+    public function setLongitude(?float $longitude): Prestador
     {
         $this->longitude = $longitude;
         return $this;
     }
 
-    public function getLatitude(): ?int
+    public function getLatitude(): ?float
     {
         return $this->latitude;
     }
 
-    public function setLatitude(?int $latitude): Prestador
+    public function setLatitude(?float $latitude): Prestador
     {
         $this->latitude = $latitude;
         return $this;
